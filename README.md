@@ -5,7 +5,7 @@ Welcome to guilded.py, a discord.py-esque asynchronous Python wrapper for the Gu
 In the works. Fortunately, if you've used discord.py before, you'll already have a head start.
 
 ## Basic Example
-
+### Clint Example :
 ```py
 import guilded
 
@@ -23,6 +23,21 @@ async def on_message(message):
         await message.channel.send('pong')
 
 client.run('email', 'password')
+```
+### Bot Example :
+```py
+import guilded
+from guilded.ext import commands
+
+bot = commands.Bot(command_prefix='?')
+   
+@bot.command()
+async def ping(ctx):
+    await ctx.send('Pong!')
+
+@bot.event
+async def on_ready():
+    print('Bot is ready!')
 ```
 
 For more examples, see the examples directory in this repository.
